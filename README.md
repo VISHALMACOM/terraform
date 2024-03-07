@@ -1,4 +1,32 @@
 # terraform
+
+# Naming Resources in cloud
+
+    Resource group:
+      - environment (DEV, STAGE, PROD), project(SAP), 
+      SAP-APP-DEV-RG
+      SAP-APP2-PROD-RG
+      
+    virtual network:
+      Network-DEV-VNET 10.0.0.0/16
+        - APP-DEV-SNET01
+        - DB-DEV-SNET01
+        - PAZ-DEV-SNET01
+      Network-PROD-VNET 172.16.0.0/16
+      Network-DVNET 192.168.0.0/16
+          
+    VM:
+      (LINUX VM CAN HAVE 128 CHARACTERS -- WINDOWS VM CAN HAVE 15 CHARACTERS)
+      SAP-APP1-DEV-U-VM1 (U/R/L/W)(UBNTU)
+      IF WE WANT TO ALSO ADD DEPARTMENT LIKE FINANCE, WE CAN DO SOMETHING LIKE THIS
+      SAP-APP1-DEV-FIN-U-VM1  
+      
+    App Services:
+    
+    Storage account:
+    
+    Key Vault:
+
 # Concept 1
 
 1.  Create, modify, and destroy resources.
