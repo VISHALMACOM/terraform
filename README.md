@@ -1,5 +1,3 @@
-# terraform
-
 # Naming Resources in cloud
 
     Resource group:
