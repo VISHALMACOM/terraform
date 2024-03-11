@@ -7,7 +7,7 @@ resource "aws_instance" "lab6_security" {
   tags = {
     Name        = "Lab6Instance"
     Environment = "Production"
-    Owner       = "Jishnu C."
+    Owner       = "Vishal Macom"
   }
 iam_instance_profile = aws_iam_instance_profile.example_profile.name
 }
