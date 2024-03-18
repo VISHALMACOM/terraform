@@ -1,0 +1,10 @@
+[windows]
+n01619861-w-vm1.canadacentral.cloudapp.azure.com
+
+[windows:vars]
+ansible_user=vishal
+ansible_password="asdfgfd@1231"
+ansible_connection=winrm
+ansible_port=5985
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore
