@@ -1,0 +1,16 @@
+---
+- name: Copy
+  hosts: linux-host1
+  tasks:
+    - name: Copy file
+      copy:
+        src: /etc/issue
+        dest: /tmp/issue
+
+    - name: Change file
+      file:
+        path: /tmp/issue
+        owner: user4000
+        group: cloudadmins
+        mode: "0444"
+

@@ -1,0 +1,8 @@
+- name: Install
+  hosts: linux
+  tasks:
+    - name: Install ypserv
+      package:
+        name: ypserv
+        state: present
+

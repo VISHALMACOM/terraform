@@ -1,0 +1,9 @@
+- name: packagess
+  hosts: linux-host1
+  vars_files:
+    - vars/package.yml
+  tasks:
+    - name: packages
+      package:
+        name: "{{ packages }}"
+        state: present

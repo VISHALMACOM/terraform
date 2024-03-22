@@ -2,6 +2,12 @@
 n01619861-u-vm-1.canadacentral.cloudapp.azure.com
 n01619861-u-vm-2.canadacentral.cloudapp.azure.com
 
+[linux-host1]
+n01619861-u-vm-1.canadacentral.cloudapp.azure.com
+
+[linux-host2]
+n01619861-u-vm-2.canadacentral.cloudapp.azure.com
+
 [windows]
 n01619861-w-vm1.canadacentral.cloudapp.azure.com
 

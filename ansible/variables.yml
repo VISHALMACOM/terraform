@@ -1,0 +1,19 @@
+- name: Playbook
+  hosts: linux-host1
+  vars_files:
+    - vars/userinfo.yml  # Assuming the variable file is in YAML format
+  tasks:
+    - name: Create groups
+      group:
+        name: "{{ grouplist }}"
+        state: present
+
+    - name: Create users
+      user:
+        name: "{{ userlist }}"
+        groups: "{{ grouplist }}"
+        append: yes  # Changed from 1 to yes
+        uid: "{{ uidlist }}"
+        state: present
+        home: "/home/{{ userlist }}"  # Corrected the quotation placement
+

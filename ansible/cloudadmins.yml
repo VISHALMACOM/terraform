@@ -1,0 +1,13 @@
+---
+- name: Create user and group
+  hosts: linux
+  tasks:
+    - name: Create group
+      group:
+        name: cloudadmins
+        gid: 3000
+
+    - name: Create user
+      user:
+        name: user4000
+        uid: 5000

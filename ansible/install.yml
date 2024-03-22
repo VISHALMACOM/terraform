@@ -1,0 +1,14 @@
+- name: Install
+  hosts: linux
+  tasks:
+    - name: Install Apache and nmap
+      yum:
+        name:
+         - httpd
+         - nmap
+
+    - name: Start httpd
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
