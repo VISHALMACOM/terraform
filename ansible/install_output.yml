@@ -1,0 +1,19 @@
+- name: packages
+  hosts: linux-host1
+  vars_files:
+    - vars/package.yml
+  tasks:
+    - name: Install packages
+      package:
+        name: "{{ packages }}"
+        state: present
+      register: package_install_output
+
+    - name: Display task output
+      debug:
+        var: package_install_output
+
+    - name: Display names of installed packages
+      debug:
+        msg: "Installed packages: {{ packages }}"
+
