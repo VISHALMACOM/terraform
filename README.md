@@ -79,3 +79,13 @@
           Create parametrized, scalable Terraform scripts to build any number of distinct resources using the for_each meta-argument
           Deploy all virtual machines in a single availability set
           Validate, deploy, expand, analyze, and destroy infrastructure
+
+
+# Concept 4
+
+          Capture and display output of task execution 
+          Work with facts (Ansible facts and package facts) 
+          Demonstrate the use of conditions in task execution 
+          Demonstrate the use of loops in task execution 
+          Demonstrate the use of handlers 
+          
