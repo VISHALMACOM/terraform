@@ -1,0 +1,15 @@
+- name: Install nmap package if defined
+  hosts: linux-host1
+  become: yes
+  gather_facts: yes
+
+  vars:
+    install_nmap: true
+
+  tasks:
+    - name: Check if nmap should be installed
+      package:
+        name: nmap
+        state: present
+      when: install_nmap is defined and install_nmap == true
+

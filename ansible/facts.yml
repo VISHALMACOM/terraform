@@ -1,0 +1,15 @@
+- name: Facts
+  hosts: linux-host1
+  gather_facts: yes
+  tasks:
+    - name: Display all facts
+      debug:
+        var: ansible_facts
+
+    - name: Display specific facts
+      debug:
+        msg: |
+          FQDN: {{ ansible_facts['fqdn'] }}
+          IPv4 Address: {{ ansible_facts['default_ipv4']['address'] }}
+          Short Hostname: {{ ansible_facts['hostname'] }}
+

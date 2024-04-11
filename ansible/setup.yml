@@ -1,0 +1,11 @@
+- name: List version of package setup
+  hosts: linux-host1
+  tasks:
+    - name: Get version of package setup
+      command: "rpm -q setup"
+      register: setup_package_version
+
+    - name: Display version of package setup
+      debug:
+        msg: "Version of package setup: {{ setup_package_version.stdout }}"
+

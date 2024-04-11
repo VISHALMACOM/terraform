@@ -1,0 +1,21 @@
+- name: Add string
+  hosts: linux
+  tasks:
+    - name: Check RHEL version
+      command: cat /etc/redhat-release
+      register: rhel_version
+
+    - name: Check kernel version
+      command: uname -r
+      register: kernel_version
+
+    - name: Add string to file if conditions met
+      blockinfile:
+        path: /tmp/conditional
+        marker: "# {mark} ANSIBLE MANAGED BLOCK - DO NOT EDIT THIS SECTION"
+        block: |
+          This is my CentOS VM
+      when: 
+        - rhel_version.stdout.find('8.2') != -1
+        - kernel_version.stdout == '4.18.0-193.el8.x86_64'
+

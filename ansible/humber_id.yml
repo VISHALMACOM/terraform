@@ -1,0 +1,17 @@
+- name: Check existence of hostname n01619861
+  hosts: linux
+  gather_facts: no
+
+  tasks:
+    - name: Ping host and check hostname
+      ping:
+      register: ping_result
+
+    - name: Get version of package setup
+      command: "cat /etc/hostname"
+      register: setup_hostname
+
+    - name: Check if hostname exists
+      debug:
+        msg: "Hostname n01619861 exists on {{ setup_hostname.stdout }}"
+      when: ping_result.ping != 'FAILED' and 'n01619861' in ansible_facts.hostname

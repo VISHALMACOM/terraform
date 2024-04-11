@@ -1,0 +1,29 @@
+- name: Install packages
+  hosts: linux-host2
+  become: true
+  vars:
+    required_free_space_mb: 2048
+    required_packages:
+      - mariadb
+      - dracut
+      - snappy
+  tasks:
+    - name: Check fileSystem
+      stat:
+        path: /
+      register: root_fs_info
+
+    - name: Get filesystem
+      setup:
+        filter: "ansible_mounts"
+      register: filesystem_facts
+
+    - name: Install packages
+      package:
+        name: "{{ required_packages }}"
+        state: present
+      when: 
+        - root_fs_info.stat.exists
+        - root_fs_info.stat.size_available >= (required_free_space_mb * 1024 * 1024)
+        - "'/' in filesystem_facts.ansible_mounts|map(attribute='mount')|list"
+
