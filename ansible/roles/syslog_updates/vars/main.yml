@@ -1,0 +1,4 @@
+rsyslog_conf_path: /etc/rsyslog.conf
+rsyslog_d_path: /etc/rsyslog.d
+var_log_path: /var/log
+

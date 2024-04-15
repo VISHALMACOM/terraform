@@ -1,0 +1,9 @@
+# defaults/main.yml
+profile_mgmt_locfile_path: "~/locfile"
+profile_mgmt_locfile_content: ""
+profile_mgmt_locfile_dest: "/tmp/locfile"
+profile_mgmt_locfile_owner: "vishal"
+profile_mgmt_locfile_group: "root"
+profile_mgmt_locfile_mode: "0444"
+profile_mgmt_emptyfile_path: "~/emptyfile"
+

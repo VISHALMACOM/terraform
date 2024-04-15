@@ -1,0 +1,6 @@
+- name: Update packages on CentOS or RedHat
+  package:
+    name: "*"
+    state: latest
+  when: ansible_distribution in ['CentOS', 'RedHat']
+

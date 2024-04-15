@@ -1,0 +1,4 @@
+- name: Set timezone to {{ timezone }} on CentOS or RedHat
+  ansible.builtin.command: timedatectl set-timezone "{{ timezone }}"
+  when: ansible_distribution in ['CentOS', 'RedHat']
+

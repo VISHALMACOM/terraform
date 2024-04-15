@@ -1,0 +1,11 @@
+- name: Execute roles
+  hosts: linux
+  gather_facts: yes
+  roles:
+    - package_remove
+    - package_install
+    - patching
+    - profile_mgmt
+    - timezone
+    - syslog_updates
+

@@ -1,0 +1,30 @@
+- name: Manage
+  hosts: linux-host1
+  tasks:
+    - name: Create file
+      file:
+        path: ~/locfile
+        state: touch
+
+    - name: Copy locfile to /tmp
+      copy:
+        content: ""
+        dest: /tmp/locfile
+        owner: "vishal"
+        group: root
+        mode: '0444'
+
+    - name: Set SELinux file type to etc_t
+      sefcontext:
+        target: /tmp/locfile
+        setype: etc_t
+
+    - name: Display the status of /tmp/locfile
+      stat:
+        path: /tmp/locfile
+
+    - name: Create an empty file called emptyfile with default permissions and ownership
+      file:
+        path: ~/emptyfile
+        state: touch
+

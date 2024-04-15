@@ -1,0 +1,27 @@
+- name: Insert a block of text into rsyslog.conf
+  blockinfile:
+    path: "{{ rsyslog_conf_path }}"
+    block: |
+      $FileCreateMode 0640
+
+- name: Set ownership, group, and permissions on /etc/rsyslog.d directory
+  file:
+    path: /etc/rsyslog.d
+    owner: root
+    group: root
+    mode: "0640"
+    recurse: yes
+
+- name: Set permissions on /var/log directory
+  file:
+    path: /var/log
+    owner: root
+    group: root
+    mode: "0775"
+    recurse: no
+
+- name: Restart rsyslog service
+  ansible.builtin.service:
+    name: rsyslog
+    state: restarted
+

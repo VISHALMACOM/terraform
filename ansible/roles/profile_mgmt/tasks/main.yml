@@ -1,0 +1,29 @@
+# tasks/main.yml
+---
+- name: Create file
+  file:
+    path: "{{ profile_mgmt_locfile_path }}"
+    state: touch
+
+- name: Copy locfile to /tmp
+  copy:
+    content: "{{ profile_mgmt_locfile_content }}"
+    dest: "{{ profile_mgmt_locfile_dest }}"
+    owner: "{{ profile_mgmt_locfile_owner }}"
+    group: "{{ profile_mgmt_locfile_group }}"
+    mode: "{{ profile_mgmt_locfile_mode }}"
+
+- name: Set SELinux file type to etc_t
+  sefcontext:
+    target: "{{ profile_mgmt_locfile_dest }}"
+    setype: etc_t
+
+- name: Display the status of /tmp/locfile
+  stat:
+    path: "{{ profile_mgmt_locfile_dest }}"
+
+- name: Create an empty file called emptyfile with default permissions and ownership
+  file:
+    path: "{{ profile_mgmt_emptyfile_path }}"
+    state: touch
+

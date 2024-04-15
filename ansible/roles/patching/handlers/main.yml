@@ -1,0 +1,5 @@
+- name: Reboot servers
+  ansible.builtin.reboot:
+    reboot_timeout: 300
+  listen: "restart services"
+
