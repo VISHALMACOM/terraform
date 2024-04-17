@@ -1,0 +1,11 @@
+[linux]
+n01619861-linux1.canadacentral.cloudapp.azure.com
+n01619861-linux2.canadacentral.cloudapp.azure.com
+n01619861-linux3.canadacentral.cloudapp.azure.com
+
+[os:children]
+linux
+
+[linux:vars]
+ansible_user=n01619861
+ansible_connection=ssh
