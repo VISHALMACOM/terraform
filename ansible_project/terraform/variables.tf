@@ -4,7 +4,6 @@ variable "location" {
   default     = "canadacentral"
 }
 
-# All resources will have these tags
 variable "personal" {
   type = map(string)
   default = {
@@ -23,8 +22,6 @@ variable "common_tags" {
   }
 }
 
-
-# Loadbalancer Independent Variables
 variable "loadbalancer-rules" {
   type = map(string)
   default = {

@@ -1,9 +1,6 @@
-# Linux
 resource "azurerm_managed_disk" "n01619861-vmlinux-datadisk" {
   resource_group_name = var.resource_group_name
   location            = var.location
-
-  # count = var.vmlinux-datadisk-info.total-vms
   count                = length(var.vmlinux-datadisk-info.n01619861-vmlinux-names)
   name                 = "${var.vmlinux-datadisk-info.n01619861-vmlinux-names[count.index]}-datadisk-${format("%d", count.index + 1)}"
   storage_account_type = var.vmlinux-datadisk-info.storage_account_type

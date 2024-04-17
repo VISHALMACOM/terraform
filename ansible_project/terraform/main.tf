@@ -1,10 +1,8 @@
-
 module "rgroup-n01619861" {
   source              = "./modules/rgroup-n01619861"
   resource_group_name = "n01619861-rg"
   location            = var.location
-
-  common_tags = var.common_tags
+  common_tags         = var.common_tags
 }
 
 module "common-n01619861" {
@@ -12,8 +10,7 @@ module "common-n01619861" {
   storage_account_name = var.storage_account_name
   resource_group_name  = module.rgroup-n01619861.resource_group_name
   location             = var.location
-
-  common_tags = var.common_tags
+  common_tags          = var.common_tags
 }
 
 module "network-n01619861" {
@@ -22,8 +19,7 @@ module "network-n01619861" {
   subnet_name          = "n01619861-subnet"
   resource_group_name  = module.rgroup-n01619861.resource_group_name
   location             = var.location
-
-  common_tags = var.common_tags
+  common_tags          = var.common_tags
 }
 
 module "database-n01619861" {
